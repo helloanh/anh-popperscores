@@ -11,6 +11,7 @@ Notes from WP Building Themes from Scratch Using Underscores by Rand-Hendriksen.
 4. Install [Theme Unit Test](https://codex.wordpress.org/Theme_Unit_Test).  
 5. Install [Developer Plugin](https://wordpress.org/plugins/developer/).  This is a helpful plugin for plugins and themes custom development.  
 6. Activate WP_DEBUG constant in wp-config.php file.  Set option from false to true.  
+7. Download Show Current Template plugin.  This will add a new feature in the toolbar that shows what template files are used for every page we are on.  
 
 ###Design to Development Process  
 
@@ -43,4 +44,20 @@ When the /test-drive page is requested, the db server finds the post by its ID, 
 Then, now go and grabs the correct template, which is the **single.php** file.  Then single.php, in turn, has refences to the other php templates.  
 
 ![single template](http://i.imgur.com/fYOpaTW.png)
+
+This modularity allows us to use the same components on the **index.php** page.  
+![index page](http://i.imgur.com/3prSXIw.png)  
+
+Using this structure, we can tailor custom experiences for specific type of content:  
+![page php](http://i.imgur.com/g7Yr2bE.png)
+
+### Template Hierarchy  
+
+[Hierarchy here](https://developer.wordpress.org/files/2014/10/template-hierarchy.png)  
+
+If WP cannot find the template, it will route the request back to the index.php page.  Knowing the template hierarchy allows you to create custom content that kicks in for different scenarios.  
+
+To help identify which template you are working on, use the "Show Current Template" plugin.  This allows you to see what are other templates your current template is calling.  
+
+
 
