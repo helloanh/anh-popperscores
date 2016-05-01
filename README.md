@@ -94,6 +94,7 @@ The theme details is actually stored in the **style.css** file in your custom _s
 
 #### Typography  
 
+##### Web Fonts  
 To insert web fonts, go to google fonts and select the fonts you want.  To load these in WP, we need to go into function.php template file and code it in php.  
 
 ``` php
@@ -106,8 +107,49 @@ function anh_popperscores_scripts() {
 
     wp_enqueue_style('anh-popperscores-google-fonts', 'https://fonts.googleapis.com/css?family=Fira+Sans:400,400italic,700,700italic|Merriweather:400,400italic,700,700italic');
 
+    wp_enqueue_style ...
+    wp_enqueue_script ...
 }
 
 ```
 
+The wp_enqueue function automatically adds the url to the header. 
 
+##### Hosting Your Own Fonts  
+
+Although you can download the font files on Google fonts, the service won't provide you the CSS that the browser needs to provide the specific font file.  This is because different browser uses different font types.  Google does not generate this CSS for you.  
+
+Using the service [google-webfonts-helper](http://google-webfonts-helper.herokuapp.com/fonts), you can get the eot, ttf, svg, woff and woff2 files + CSS snippets files you need.  
+
+1.  Create a fonts directory in your theme folder.  
+2.  Create two subfolders inside the font/ for the two fonts you will host.  
+        fonts/fira-sans/ 
+        fonts/merriweather/  
+
+3. Create a custom-fonts.css file in the fonts folders. 
+4. Go to google-webfonts-helper and find the fonts.  Before downloading, remember to customize the folder prefix from default *fonts/* to *fira-sans/* and *merriweather/* similar to the directory name that you've made in step 2.  
+5. Copy-paste the css styles that is generated on the google-webfonts-helper into your custom-fonts.css file.  
+6. Place the downloaded files into the respective subdirectory.  For example, all eot tff svg woff and woff2 files belonging to fira-sans/ will be placed into the fira-sans/ folder.  
+7. Go to functions.php and add wp_enqueue_style('themename-local-fonts', get_template_uri()) into the themenamehere_scripts function.  
+
+``` php
+
+function anh_popperscores_scripts() {
+    wp_enqueue_style( 'anh-popperscores-style', get_stylesheet_uri() );
+
+    // Add Google Fonts with Third-Party Host (Fira Sans and Merriweather font)
+    // wp_enqueue_style('anh-popperscores-google-fonts', 
+    //  'https://fonts.googleapis.com/css?family=Fira+Sans:400,400italic,700,700italic|Merriweather:400,400italic,700,700italic');
+    
+    // Add Google Fonts that is self-hosted locally
+    wp_enqueue_style('anh-popperscores-local-fonts', get_template_directory_uri() . '/fonts/custom-fonts.css');
+    wp_enqueue_script( 'anh-popperscores-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
+
+    wp_enqueue_script( 'anh-popperscores-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
+
+    if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
+        wp_enqueue_script( 'comment-reply' );
+    }
+}
+
+```
