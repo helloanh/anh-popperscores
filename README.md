@@ -14,20 +14,20 @@ Notes from WP Building Themes from Scratch Using Underscores by Rand-Hendriksen.
 
 ###Design to Development Process  
 
-Web design and dev are going through drastic changes due to proliferation ofmobile devices.  The old method of designing webpages in Photoshop and trying to create pixel perfect version in HTML CSS is no longer valid.  
+Web design and dev are going through drastic changes due to proliferation of mobile devices.  The old method of designing webpages in Photoshop and trying to create pixel perfect version in HTML CSS is no longer valid.  
 
-The current trend is modular, mobile-first design.  That means three things:  
+#### The current trend is modular, mobile-first design.  That means three things:  
     1. Design Modules that make a full view  
     2. Design and build for small screens first, then scale up the screen for other larger sizes.  
     3.  Make design decisions in the browser.  
 
 #### Responsive Web Deign Three Simple Steps  
 
-1. start with the smallest screen  
-2. make viewport wider  
-3. when a component looks strange, add a breakpoint with media queries  
+    1. start with the smallest screen  
+    2. make viewport wider  
+    3. when a component looks strange, add a breakpoint with media queries  
 
-### Structure of _s Themes  
+### Structure of _s Themes    
 WP uses a distributive templating principle.  
 
 ```
@@ -38,9 +38,9 @@ http://mysite.com/test-drive  --> htpp://mysite.com/?p=2726
 
 ```
 When the /test-drive page is requested, the db server finds the post by its ID, which is 2726, and returns it to the WP file server:  
-![db server finds post and send to wp file server](http://imgur.com/gcu5cGy)
+![db server](http://i.imgur.com/gcu5cGy.png)  
 
 Then, now go and grabs the correct template, which is the **single.php** file.  Then single.php, in turn, has refences to the other php templates.  
 
-![single template](http://imgur.com/fYOpaTW)
-![]
+![single template](http://i.imgur.com/fYOpaTW.png)
+
