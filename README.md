@@ -1,45 +1,46 @@
-[![Build Status](https://travis-ci.org/Automattic/_s.svg?branch=master)](https://travis-ci.org/Automattic/_s)
+# WP  Underscore Development Notes  
 
-_s
-===
+Notes from WP Building Themes from Scratch Using Underscores by Rand-Hendriksen.  Courser from Lynda.com  
 
-Hi. I'm a starter theme called `_s`, or `underscores`, if you like. I'm a theme meant for hacking so don't use me as a Parent Theme. Instead try turning me into the next, most awesome, WordPress theme out there. That's what I'm here for.
+###Installation and Step-by-Step Set-up:  
 
-My ultra-minimal CSS might make me look like theme tartare but that means less stuff to get in your way when you're designing your awesome theme. Here are some of the other more interesting things you'll find here:
+1. Visit [underscores website](http://underscores.me).  Create theme using the advaned options.  Click on _sassify checkbox for SASS preprocessor option.  Then, click on the generate button.  This will create the theme file.  
 
-* A just right amount of lean, well-commented, modern, HTML5 templates.
-* A helpful 404 template.
-* A sample custom header implementation in `inc/custom-header.php` that can be activated by uncommenting one line in `functions.php` and adding the code snippet found in the comments of `inc/custom-header.php` to your `header.php` template.
-* Custom template tags in `inc/template-tags.php` that keep your templates clean and neat and prevent code duplication.
-* Some small tweaks in `inc/extras.php` that can improve your theming experience.
-* A script at `js/navigation.js` that makes your menu a toggled dropdown on small screens (like your phone), ready for CSS artistry. It's enqueued in `functions.php`.
-* 2 sample CSS layouts in `layouts/` for a sidebar on either side of your content.
-* Smartly organized starter CSS in `style.css` that will help you to quickly get your design off the ground.
-* Licensed under GPLv2 or later. :) Use it to make something cool.
+2. Place the themefile in your wp-content/theme directory.  
+3. Login to the WP Dashboard and select the theme.  
+4. Install [Theme Unit Test](https://codex.wordpress.org/Theme_Unit_Test).  
+5. Install [Developer Plugin](https://wordpress.org/plugins/developer/).  This is a helpful plugin for plugins and themes custom development.  
+6. Activate WP_DEBUG constant in wp-config.php file.  Set option from false to true.  
 
-Getting Started
----------------
+###Design to Development Process  
 
-If you want to keep it simple, head over to http://underscores.me and generate your `_s` based theme from there. You just input the name of the theme you want to create, click the "Generate" button, and you get your ready-to-awesomize starter theme.
+Web design and dev are going through drastic changes due to proliferation ofmobile devices.  The old method of designing webpages in Photoshop and trying to create pixel perfect version in HTML CSS is no longer valid.  
 
-If you want to set things up manually, download `_s` from GitHub. The first thing you want to do is copy the `_s` directory and change the name to something else (like, say, `megatherium`), and then you'll need to do a five-step find and replace on the name in all the templates.
+The current trend is modular, mobile-first design.  That means three things:  
+    1. Design Modules that make a full view  
+    2. Design and build for small screens first, then scale up the screen for other larger sizes.  
+    3.  Make design decisions in the browser.  
 
-1. Search for `'_s'` (inside single quotations) to capture the text domain.
-2. Search for `_s_` to capture all the function names.
-3. Search for `Text Domain: _s` in style.css.
-4. Search for <code>&nbsp;_s</code> (with a space before it) to capture DocBlocks.
-5. Search for `_s-` to capture prefixed handles.
+#### Responsive Web Deign Three Simple Steps  
 
-OR
+1. start with the smallest screen  
+2. make viewport wider  
+3. when a component looks strange, add a breakpoint with media queries  
 
-* Search for: `'_s'` and replace with: `'megatherium'`
-* Search for: `_s_` and replace with: `megatherium_`
-* Search for: `Text Domain: _s` and replace with: `Text Domain: megatherium` in style.css.
-* Search for: <code>&nbsp;_s</code> and replace with: <code>&nbsp;Megatherium</code>
-* Search for: `_s-` and replace with: `megatherium-`
+### Structure of _s Themes  
+WP uses a distributive templating principle.  
 
-Then, update the stylesheet header in `style.css` and the links in `footer.php` with your own information. Next, update or delete this readme.
+```
+When the user enters http://mysite.com/test-drive,  
+that url is actually a rewrite of a db reference.  
 
-Now you're ready to go! The next step is easy to say, but harder to do: make an awesome WordPress theme. :)
+http://mysite.com/test-drive  --> htpp://mysite.com/?p=2726  
 
-Good luck!
+```
+When the /test-drive page is requested, the db server finds the post by its ID, which is 2726, and returns it to the WP file server:  
+![db server finds post and send to wp file server](http://imgur.com/gcu5cGy)
+
+Then, now go and grabs the correct template, which is the **single.php** file.  Then single.php, in turn, has refences to the other php templates.  
+
+![single template](http://imgur.com/fYOpaTW)
+![]
