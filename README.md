@@ -257,3 +257,19 @@ the font size will increase */
     }
 }
 ```
+
+
+### Chapter 4. Creating Menus  
+
+#### Headers  
+
+Our current header is not distinguishable from the page.  We want it to lok like the mock up.  To change the header, we will be accessing the .site-header class.  To change the contents of the header, we will be accessing the .site-branding class within the site-header container.  
+
+![current_header](http://i.imgur.com/hfnSwJO.png)
+
+![mockup](http://i.imgur.com/EzmkROk.png)
+![mockup-desktop](http://i.imgur.com/JKBvxL4.png)
+
+Add a new section for the header stylings in style.css after #Clearings section.  
+
+

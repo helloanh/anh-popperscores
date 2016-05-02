@@ -116,6 +116,13 @@ add_action( 'widgets_init', 'anh_popperscores_widgets_init' );
 function anh_popperscores_scripts() {
 	wp_enqueue_style( 'anh-popperscores-style', get_stylesheet_uri() );
 
+	// Add Google Fonts with Third-Party Host (Fira Sans and Merriweather font)
+	// wp_enqueue_style('anh-popperscores-google-fonts', 
+	// 	'https://fonts.googleapis.com/css?family=Fira+Sans:400,400italic,700,700italic|Merriweather:400,400italic,700,700italic');
+	
+	// Add Google Fonts that is self-hosted locally
+	wp_enqueue_style('anh-popperscores-local-fonts', get_template_directory_uri() . '/fonts/custom-fonts.css');
+
 	wp_enqueue_script( 'anh-popperscores-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
 
 	wp_enqueue_script( 'anh-popperscores-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
