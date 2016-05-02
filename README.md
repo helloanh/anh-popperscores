@@ -2,7 +2,7 @@
 
 Notes from WP Building Themes from Scratch Using Underscores by Rand-Hendriksen.  Courser from Lynda.com  
 
-###Installation and Step-by-Step Set-up:  
+## Ch1. Installation and Step-by-Step Set-up:  
 
 1. Visit [underscores website](http://underscores.me).  Create theme using the advaned options.  Click on _sassify checkbox for SASS preprocessor option.  Then, click on the generate button.  This will create the theme file.  
 
@@ -13,7 +13,7 @@ Notes from WP Building Themes from Scratch Using Underscores by Rand-Hendriksen.
 6. Activate WP_DEBUG constant in wp-config.php file.  Set option from false to true.  
 7. Download Show Current Template plugin.  This will add a new feature in the toolbar that shows what template files are used for every page we are on.  
 
-###Design to Development Process  
+## Ch2. Design to Development Process  
 
 Web design and dev are going through drastic changes due to proliferation of mobile devices.  The old method of designing webpages in Photoshop and trying to create pixel perfect version in HTML CSS is no longer valid.  
 
@@ -84,7 +84,7 @@ Underscores is an advanced theme that follows the latest webdev standards. It us
         layouts/  
         template-parts/  contains all the content loops  
 
-### Chapter 3. Setting Up the Basic Theme  
+## Chapter 3. Setting Up the Basic Theme  
 
 #### Metadata  
 
@@ -115,7 +115,7 @@ function anh_popperscores_scripts() {
 
 The wp_enqueue function automatically adds the url to the header. 
 
-##### Hosting Your Own Fonts  
+#### Hosting Your Own Fonts  
 
 Although you can download the font files on Google fonts, the service won't provide you the CSS that the browser needs to provide the specific font file.  This is because different browser uses different font types.  Google does not generate this CSS for you.  
 
@@ -259,17 +259,17 @@ the font size will increase */
 ```
 
 
-### Chapter 4. Creating Menus  
+## Chapter 4. Creating Menus  
 
-#### Headers  
+### Headers Styling 
 
 Our current header is not distinguishable from the page.  We want it to lok like the mock up.  To change the header, we will be accessing the .site-header class.  To change the contents of the header, we will be accessing the .site-branding class within the site-header container.  
 
+![mockup-desktop](http://i.imgur.com/JKBvxL4.png)
+![mockup](http://i.imgur.com/EzmkROk.$png)
 ![current_header](http://i.imgur.com/hfnSwJO.png)
 
-![mockup](http://i.imgur.com/EzmkROk.png)
-![mockup-desktop](http://i.imgur.com/JKBvxL4.png)
 
-Add a new section for the header stylings in style.css after #Clearings section.  
+Add a new section for the header stylings in style.css after #Clearings section.  View style.css #Header section to see changes.  
 
 
