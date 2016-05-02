@@ -266,11 +266,17 @@ button,
 input,
 select,
 textarea {
-	color: #404040;
-	font-family: sans-serif;
+	color: #000;
+	font-family: 'Merriweather', serif;
 	font-size: 16px;
 	font-size: 1rem;
 	line-height: 1.5;
+}
+
+/*create new rule for site-content*/
+.site-content {
+	font-size: 1.125em;  /*similar to 18px*/
+	line-height: 1.6em;	
 }
 
 h1,
@@ -279,8 +285,22 @@ h3,
 h4,
 h5,
 h6 {
+	font-family: 'Fira Sans', sans-serif;
 	clear: both;
+	/*this em will relate to the .site-content 1.125em, or 18 px */
+	line-height: 1.3em;
+	/*root relative em to relate to top most font size, which is 16px */
+	margin-top: 2.5rem;
+	margin-bottom: 1rem; 
 }
+
+/*ensures each headings are different */
+h1 { font-size: 2.4em; }
+h2 { font-size: 2.2em; }
+h3 { font-size: 2.0em; }
+h4 { font-size: 1.8em; }
+h5 { font-size: 1.6em; }
+h6 { font-size: 1.4em; }
 
 p {
 	margin-bottom: 1.5em;
@@ -764,6 +784,24 @@ a:active {
 /*--------------------------------------------------------------
 # Content
 --------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+## Global 
+--------------------------------------------------------------*/
+.site-main {
+	/*related to the 1.125em in the .site-content container*/
+	font-size: 0.8em;
+	line-height: 1.6em;
+}
+
+/* for wider screens, so when screen gets to a certain width, 
+the font size will increase */
+@media screen and (min-width: 40em) {
+	.site-main { 
+		font-size: 1em;
+	}
+}
+
 /*--------------------------------------------------------------
 ## Posts and pages
 --------------------------------------------------------------*/

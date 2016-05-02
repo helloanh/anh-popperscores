@@ -75,7 +75,7 @@ Underscores is an advanced theme that follows the latest webdev standards. It us
         header.php  
         sidebar.php  
     
-    [elements of pg](http://i.imgur.com/SuS0Dqf.png)
+[elements of pg](http://i.imgur.com/SuS0Dqf.png)
 
 #### Five Folders:  
         inc/ has extra functions and features 
@@ -84,7 +84,7 @@ Underscores is an advanced theme that follows the latest webdev standards. It us
         layouts/  
         template-parts/  contains all the content loops  
 
-### Setting Up the Basic Theme  
+### Chapter 3. Setting Up the Basic Theme  
 
 #### Metadata  
 
@@ -130,7 +130,7 @@ Using the service [google-webfonts-helper](http://google-webfonts-helper.herokua
 4. Go to google-webfonts-helper and find the fonts.  Before downloading, remember to customize the folder prefix from default *fonts/* to *fira-sans/* and *merriweather/* similar to the directory name that you've made in step 2.  
 5. Copy-paste the css styles that is generated on the google-webfonts-helper into your custom-fonts.css file.  
 6. Place the downloaded files into the respective subdirectory.  For example, all eot tff svg woff and woff2 files belonging to fira-sans/ will be placed into the fira-sans/ folder.  
-7. Go to functions.php and add wp_enqueue_style('themename-local-fonts', get_template_uri()) into the themenamehere_scripts function.  
+7. Go to functions.php and add wp_enqueue_style('themename-local-fonts', get_template_uri() . '/pathname/') into the themenamehere_scripts function.  
 
 ``` php
 
@@ -153,3 +153,107 @@ function anh_popperscores_scripts() {
 }
 
 ```
+### Responsive Typography 
+
+Looking at overall semantic structure of _s, we have one page container with two content for primary and secondary area.  
+
+[semantic_structure]()  
+
+Specifically in #primary div, we have a <main> with the class site-main that holds the article and navs and comments.  
+
+[primary_struture]()  
+
+#### Looking at these container layouts, you can make two decisions: 
+
+        1. Set default font size for all contents within the *site-content* container.  
+        2. Use the <main> tag with #main to control the typography within the post and pages.  
+
+### Implementation in the stylesheet  
+
+        We need to go to the **Typography** section in style.css and change the color and font-sizes.
+
+        1. Create .site-content new rule with font-size and line-height.
+
+
+        ``` css
+        /* style.css */
+
+        /*--------------------------------------------------------------
+        # Typography
+        --------------------------------------------------------------*/
+        body,
+        button,
+        input,
+        select,
+        textarea {
+            /* color was #404040 for _s default, change to black */
+            color: #000;   
+            font-family: 'Merriweather', serif;
+            font-size: 16px;
+            font-size: 1rem;
+            line-height: 1.5;
+        }
+
+        /*create new rule for site-content*/
+        .site-content {
+            font-size: 1.125em;  /*similar to 18px*/
+            line-height: 1.6em; 
+        }
+
+        ```
+
+        2.  Change the line-height for all normal headings throughout sites, and change margin-top and margin-bottom.  
+
+        ``` css
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: 'Fira Sans', sans-serif;
+            clear: both;
+            /*this em will relate to the .site-content 1.125em, or 18 px */
+            line-height: 1.3em;
+            /*root relative em to relate to top most font size, which is 16px */
+            margin-top: 2.5rem;
+            margin-bottom: 1rem; 
+        }
+
+        ```
+
+        3. Add new font-size for each headings.  
+
+        ``` css
+
+        /*ensures each headings are different */
+        h1 { font-size: 2.4em; }
+        h2 { font-size: 2.2em; }
+        h3 { font-size: 2.0em; }
+        h4 { font-size: 1.8em; }
+        h5 { font-size: 1.6em; }
+        h6 { font-size: 1.4em; }
+            
+        ```  
+
+        4. Go to **Content** section and add new *Global* sub-section.  Add the following style changes.  
+
+        ``` css
+        /*--------------------------------------------------------------
+        ## Global 
+        --------------------------------------------------------------*/
+        .site-main {
+            /*related to the 1.125em in the .site-content container*/
+            font-size: 0.8em;
+            line-height: 1.6em;
+        }
+
+        /* for wider screens, so when screen gets to a certain width, 
+        the font size will increase */
+        @media screen and (min-width: 40em) {
+            .site-main { 
+                font-size: 1em;
+            }
+        }
+        ```
