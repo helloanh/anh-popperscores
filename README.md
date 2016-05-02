@@ -353,12 +353,16 @@ unction anh_popperscores_custom_header_setup() {
 
 ### Enabling Site Icons in Header  
 
+#### Creating a site button  
 The site button will have the following behaviors:  
         1. The button has the first letter of your blog's name. 
         2. The button acts as a home page link.   
         3. The button will be present on posts with no featured, posts with featured img, post with collapsed menu, and desktop-full screen.    
-        4. The button is not fixed to the viewpoint.  That means when the reader is scrolling down the screen, the button will disappear.    
-        5.  
+        4. The button is not fixed to the viewpoint.  That means when the reader is scrolling down the screen, the button will disappear.   
+
+#### Site Icons 
+
+
 
 
 
