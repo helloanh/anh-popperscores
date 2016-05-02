@@ -397,6 +397,22 @@ Removing the entire header for specific page, such as pages with singular post, 
 
 We still need to work on the menu to place it on the bottom, when the header is hidden.  That's the next step.  
 
+## Chapter 5. Creating Menu
+
+The majority of the visitor on your site are mobile users.  It is better to rethink our placement of menus.  John Clark, in his article on [How We Hold Our Gadgets](http://alistapart.com/article/how-we-hold-our-gadgets) talks about this phenonmenon.   
+
+![clark](http://i.imgur.com/qWq2rYK.png)  
+
+To keep the mobile user experience in mind, we will move the menu to the bottom left of the screen.  When the user taps on the menu, the menu items will expand.  
+
+![before-menu](http://i.imgur.com/a/C3fEJ.png)
+![after-menu](http://i.imgur.com/HrRyv8a.png) 
+
+The menu sticks on the page, and also has submenus.  The menu button disappears as we scrolls down and reappear as we scroll up.  
+
+
+
+
 
 
 
