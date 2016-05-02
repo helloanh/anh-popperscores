@@ -784,6 +784,13 @@ a:active {
 
 }
 
+/*to make sure header fits with site icon, specially for single post page*/
+@media screen and (min-width: 50em) {
+	.site-header {
+		min-height: 4em;
+	}
+}
+
 .site-logo a {
 
 	position: absolute;

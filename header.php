@@ -44,7 +44,7 @@
 					<?php printf( esc_html__('Go to the home page of %1$s',
 					anh-popperscores), $site_title); ?>
 				</div>
-				
+
 				<!-- set up conditional for site icon -->
 				<?php if (has_site_icon() ) {
 					$site_icon = esc_url( get_site_icon_url(270) ); ?>
@@ -59,7 +59,8 @@
 			</a>
 		</div>	
 
-		<div class="site-branding">
+		<!-- put conditional to hide header for single post page -->
+		<div class="site-branding<?php if (is_singular() ) {echo ' screen-reader-text'; } ?>">
 			<?php
 			if ( is_front_page() && is_home() ) : ?>
 				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>

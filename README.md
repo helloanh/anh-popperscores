@@ -374,6 +374,33 @@ Site icon is in the **Customizer > Site Identity > Site Icon**.  We can use it a
 
 ``` 
 
+### Hide Header in Single Post Page  
+
+Removing the entire header for specific page, such as pages with singular post, is as easy as adding a single class and a single media query.  
+
+```php
+//header.php
+    <!-- put conditional to hide header for single post page in the .site-heading class-->
+    <div class="site-branding<?php if (is_singular() ) {echo ' screen-reader-text'; } ?>">
+
+```  
+
+```css
+
+/* style.css in # Header section, add media query to make sure header fits with site icon*/
+@media screen and (min-width: 50em) {
+    .site-header {
+        min-height: 4em;
+    }
+}
+```
+
+We still need to work on the menu to place it on the bottom, when the header is hidden.  That's the next step.  
+
+
+
+
+
 
 
 
