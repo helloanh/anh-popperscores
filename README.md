@@ -174,7 +174,8 @@ We need to go to the **Typography** section in style.css and change the color an
 
 1. Create .site-content new rule with font-size and line-height.
 
-``` css
+```
+
 /* style.css */
 
 /*--------------------------------------------------------------
