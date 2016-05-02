@@ -789,6 +789,7 @@ a:active {
 ## Global 
 --------------------------------------------------------------*/
 .site-main {
+	margin: 1.4em;
 	/*related to the 1.125em in the .site-content container*/
 	font-size: 0.8em;
 	line-height: 1.6em;

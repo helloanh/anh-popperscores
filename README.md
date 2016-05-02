@@ -157,11 +157,11 @@ function anh_popperscores_scripts() {
 
 Looking at overall semantic structure of _s, we have one page container with two content for primary and secondary area.  
 
-![semantic_structure](http:i.//imgur.com/sjTyYii.png)  
+![semantic_structure](http://i.imgur.com/sjTyYii.png)  
 
 Specifically in #primary div, we have a <main> with the class site-main that holds the article and navs and comments.  
 
-![semantic_primary_struture](http:i.//imgur.com/S8Unc27.png)  
+![semantic_primary_struture](http://i.imgur.com/S8Unc27.png)  
 
 #### Looking at these container layouts, you can make two decisions: 
 
