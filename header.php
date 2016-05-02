@@ -33,7 +33,24 @@
 			<!-- else display the regular banner with default style -->
 			<header id="masthead" class="site-header" role="banner">
 		
-		<?php } ?>	
+		<?php } ?>
+
+		<!-- Displaying site icon or first letter as logo -->
+		<div class="site-logo">
+			<?php $site_title = get_bloginfo( 'name' ); ?>
+			<a href="<?php echo esc_url( home_url( '/') ); ?>" rel="home">
+				only works with text-to-speech browser, else it is hidden
+				<div class="screen-reader-text">
+					<?php printf( esc_html__('Go to the home page of %1$s',
+					anh-popperscores), $site_title); ?>
+				</div>
+				// displays the first letter of the site title 
+				// aria-hidden is true to disables text to speech reader
+				<div class="site-firstletter" aria-hidden="true">
+					<?php echo substr($site_title, 0, 1); ?>
+				</div>
+			</a>
+		</div>	
 
 		<div class="site-branding">
 			<?php
