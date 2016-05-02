@@ -266,8 +266,8 @@ the font size will increase */
 Our current header is not distinguishable from the page.  We want it to lok like the mock up.  To change the header, we will be accessing the .site-header class.  To change the contents of the header, we will be accessing the .site-branding class within the site-header container.  
 
 ![mockup-desktop](http://i.imgur.com/JKBvxL4.png)
-![mockup](http://i.imgur.com/EzmkROk.$png)
-![current_header](http://i.imgur.com/hfnSwJO.png)
+![mockup](http://i.imgur.com/EzmkROk.png)
+![current-header](http://i.imgur.com/hfnSwJO.png)
 
 
 Add a new section for the header stylings in style.css after #Clearings section.  View style.css #Header section to see changes.    
@@ -296,5 +296,35 @@ function anh_popperscores_custom_header_setup() {
 }
 
 ```
+
+#### Making header hide behind site title and headline  
+
+To make the header stretch to full size of the header container, we need to use a conditional in header.php file.  
+
+```php
+<div id="page" class="site">
+    <a class="skip-link screen-reader-text" href="#main"><?php esc_html_e( 'Skip to content', 'anh-popperscores' ); ?></a> 
+    <!-- If we have a header image -->
+    <?php if( get_header_image()) { ?>
+        <!-- Then display the header with background image -->
+        <header id="masthead" class="site-header" style="background-image: url(<?php header_image(); ?>)" role="banner">
+    <?php  } else } ?>
+        <!-- else display the regular banner with default style -->
+        <header id="masthead" class="site-header" role="banner">
+    <?php } ?>
+        <!-- add for custom header option in dashboard customizer -->
+        <?php if ( get_header_image() ) : ?>
+            <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
+            <img src="<?php header_image(); ?>" width="<?php echo esc_attr( get_custom_header()->width ); ?>" height="<?php echo esc_attr( get_custom_header()->height ); ?>" alt="">
+            </a>
+        <?php endif; // End header image check. ?>
+
+...
+
+
+```
+
+
+
 
 

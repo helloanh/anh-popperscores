@@ -24,7 +24,14 @@
 <div id="page" class="site">
 	<a class="skip-link screen-reader-text" href="#main"><?php esc_html_e( 'Skip to content', 'anh-popperscores' ); ?></a>
 
-	<header id="masthead" class="site-header" role="banner">
+	<!-- If we have a header image -->
+	<?php if( get_header_image()) { ?>
+		<!-- Then display the header with background image -->
+		<header id="masthead" class="site-header" style="background-image: url(<?php header_image(); ?>)" role="banner">
+	<?php  } else } ?>
+		<!-- else display the regular banner with default style -->
+		<header id="masthead" class="site-header" role="banner">
+	<?php } ?>
 		<!-- add for custom header option in dashboard customizer -->
 		<?php if ( get_header_image() ) : ?>
 			<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
