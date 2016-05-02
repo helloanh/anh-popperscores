@@ -321,9 +321,20 @@ To make the header stretch to full size of the header container, we need to use 
 
 ...
 
-
 ```
 
+Currently, the background image in the header is in repeated mode.  With some CSS, we can change this by using **background-size: cover** styling in .site-header class. 
+
+```css
+/*--------------------------------------------------------------
+# Header
+--------------------------------------------------------------*/
+.site-header {
+    background-color: #000;
+    background-size: cover;
+}
+
+```
 
 
 
