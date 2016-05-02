@@ -270,6 +270,31 @@ Our current header is not distinguishable from the page.  We want it to lok like
 ![current_header](http://i.imgur.com/hfnSwJO.png)
 
 
-Add a new section for the header stylings in style.css after #Clearings section.  View style.css #Header section to see changes.  
+Add a new section for the header stylings in style.css after #Clearings section.  View style.css #Header section to see changes.    
+
+
+Go to the customize page in WP theme.  We still cannot change the background image yet, because the code needs to be placed in the **header.php** file.  
+
+#### Add Custom Header Feature    
+
+        1. Go to inc/custom-header.php to access the code.  
+        2. Paste them in the header.php  
+
+Now you can upload an img through the WP customizer in the Dashboard, but the dimensions are not quite right.  To fix this, go to the yourthemename_custom_header_setup() function in the inc/custom-header.php file to modify.  
+
+``` php
+// example from inc/custom-header.php
+function anh_popperscores_custom_header_setup() {
+    add_theme_support( 'custom-header', apply_filters( 'anh_popperscores_custom_header_args', array(
+        'default-image'          => '',
+        'default-text-color'     => 'ffffff',
+        'width'                  => 1000,
+        'height'                 => 250,
+        'flex-height'            => true,
+        'wp-head-callback'       => 'anh_popperscores_header_style',
+    ) ) );
+}
+
+```
 
 
