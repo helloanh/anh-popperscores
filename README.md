@@ -157,11 +157,11 @@ function anh_popperscores_scripts() {
 
 Looking at overall semantic structure of _s, we have one page container with two content for primary and secondary area.  
 
-[semantic_structure]()  
+[semantic_structure](http:i.//imgur.com/sjTyYii.png)  
 
 Specifically in #primary div, we have a <main> with the class site-main that holds the article and navs and comments.  
 
-[primary_struture]()  
+[semantic_primary_struture](http:i.//imgur.com/S8Unc27.png)  
 
 #### Looking at these container layouts, you can make two decisions: 
 
@@ -170,90 +170,89 @@ Specifically in #primary div, we have a <main> with the class site-main that hol
 
 ### Implementation in the stylesheet  
 
-        We need to go to the **Typography** section in style.css and change the color and font-sizes.
+We need to go to the **Typography** section in style.css and change the color and font-sizes.
 
-        1. Create .site-content new rule with font-size and line-height.
+1. Create .site-content new rule with font-size and line-height.
 
+``` css
+/* style.css */
 
-        ``` css
-        /* style.css */
+/*--------------------------------------------------------------
+# Typography
+--------------------------------------------------------------*/
+body,
+button,
+input,
+select,
+textarea {
+    /* color was #404040 for _s default, change to black */
+    color: #000;   
+    font-family: 'Merriweather', serif;
+    font-size: 16px;
+    font-size: 1rem;
+    line-height: 1.5;
+}
 
-        /*--------------------------------------------------------------
-        # Typography
-        --------------------------------------------------------------*/
-        body,
-        button,
-        input,
-        select,
-        textarea {
-            /* color was #404040 for _s default, change to black */
-            color: #000;   
-            font-family: 'Merriweather', serif;
-            font-size: 16px;
-            font-size: 1rem;
-            line-height: 1.5;
-        }
+/*create new rule for site-content*/
+.site-content {
+    font-size: 1.125em;  /*similar to 18px*/
+    line-height: 1.6em; 
+}
 
-        /*create new rule for site-content*/
-        .site-content {
-            font-size: 1.125em;  /*similar to 18px*/
-            line-height: 1.6em; 
-        }
+```
 
-        ```
+2.  Change the line-height for all normal headings throughout sites, and change margin-top and margin-bottom.  
 
-        2.  Change the line-height for all normal headings throughout sites, and change margin-top and margin-bottom.  
+``` css
 
-        ``` css
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Fira Sans', sans-serif;
+    clear: both;
+    /*this em will relate to the .site-content 1.125em, or 18 px */
+    line-height: 1.3em;
+    /*root relative em to relate to top most font size, which is 16px */
+    margin-top: 2.5rem;
+    margin-bottom: 1rem; 
+}
 
-        h1,
-        h2,
-        h3,
-        h4,
-        h5,
-        h6 {
-            font-family: 'Fira Sans', sans-serif;
-            clear: both;
-            /*this em will relate to the .site-content 1.125em, or 18 px */
-            line-height: 1.3em;
-            /*root relative em to relate to top most font size, which is 16px */
-            margin-top: 2.5rem;
-            margin-bottom: 1rem; 
-        }
+```
 
-        ```
+3. Add new font-size for each headings.  
 
-        3. Add new font-size for each headings.  
+``` css
 
-        ``` css
+/*ensures each headings are different */
+h1 { font-size: 2.4em; }
+h2 { font-size: 2.2em; }
+h3 { font-size: 2.0em; }
+h4 { font-size: 1.8em; }
+h5 { font-size: 1.6em; }
+h6 { font-size: 1.4em; }
+    
+```  
 
-        /*ensures each headings are different */
-        h1 { font-size: 2.4em; }
-        h2 { font-size: 2.2em; }
-        h3 { font-size: 2.0em; }
-        h4 { font-size: 1.8em; }
-        h5 { font-size: 1.6em; }
-        h6 { font-size: 1.4em; }
-            
-        ```  
+4. Go to **Content** section and add new *Global* sub-section.  Add the following style changes.  
 
-        4. Go to **Content** section and add new *Global* sub-section.  Add the following style changes.  
+``` css
+/*--------------------------------------------------------------
+## Global 
+--------------------------------------------------------------*/
+.site-main {
+    /*related to the 1.125em in the .site-content container*/
+    font-size: 0.8em;
+    line-height: 1.6em;
+}
 
-        ``` css
-        /*--------------------------------------------------------------
-        ## Global 
-        --------------------------------------------------------------*/
-        .site-main {
-            /*related to the 1.125em in the .site-content container*/
-            font-size: 0.8em;
-            line-height: 1.6em;
-        }
-
-        /* for wider screens, so when screen gets to a certain width, 
-        the font size will increase */
-        @media screen and (min-width: 40em) {
-            .site-main { 
-                font-size: 1em;
-            }
-        }
-        ```
+/* for wider screens, so when screen gets to a certain width, 
+the font size will increase */
+@media screen and (min-width: 40em) {
+    .site-main { 
+        font-size: 1em;
+    }
+}
+```
