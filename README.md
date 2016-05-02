@@ -312,13 +312,13 @@ To make the header stretch to full size of the header container, we need to use 
         <!-- else display the regular banner with default style -->
         <header id="masthead" class="site-header" role="banner">
     <?php } ?>
-        <!-- add for custom header option in dashboard customizer -->
-        <?php if ( get_header_image() ) : ?>
-            <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
-            <img src="<?php header_image(); ?>" width="<?php echo esc_attr( get_custom_header()->width ); ?>" height="<?php echo esc_attr( get_custom_header()->height ); ?>" alt="">
-            </a>
-        <?php endif; // End header image check. ?>
 
+    <!-- THIS CODE BELOW NEEDS TO BE REMOVED -->
+        <!--   <?php if ( get_header_image() ) : ?>
+             <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
+              <img src="<?php header_image(); ?>" width="<?php echo esc_attr( get_custom_header()->width ); ?>" height="<?php echo esc_attr( get_custom_header()->height ); ?>" alt="">
+              </a>
+          <?php endif; // End header image check. ?> -->
 ...
 
 ```
@@ -335,6 +335,23 @@ Currently, the background image in the header is in repeated mode.  With some CS
 }
 
 ```
+
+You can also change the width and height of the background image for the site-header here in the 'width' and 'height' option.  
+
+```php
+unction anh_popperscores_custom_header_setup() {
+    add_theme_support( 'custom-header', apply_filters( 'anh_popperscores_custom_header_args', array(
+        'default-image'          => '',
+        'default-text-color'     => 'ffffff',
+        'width'                  => 1600,
+        'height'                 => 420,
+        'wp-head-callback'       => 'anh_popperscores_header_style',
+    ) ) );
+}
+
+```
+
+
 
 
 
