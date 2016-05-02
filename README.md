@@ -360,7 +360,22 @@ The site button will have the following behaviors:
         3. The button will be present on posts with no featured, posts with featured img, post with collapsed menu, and desktop-full screen.    
         4. The button is not fixed to the viewpoint.  That means when the reader is scrolling down the screen, the button will disappear.   
 
-#### Site Icons 
+#### Site Icons in Place of Header
+Let's make it an option for us to hook a site icon into the site header icon.  
+
+Site icon is in the **Customizer > Site Identity > Site Icon**.  We can use it as a site favicon, but also as a site theme with two new functions:  
+
+```php
+    // tests if an icon has been uploaded to wp
+    has_site_icon(int $blog_id) 
+
+    // grab the url for site icon, notice the largest size is 512
+    get_site_icon_url( int $size = 512, string $url = '', int $blog_id)
+
+``` 
+
+
+
 
 
 

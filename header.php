@@ -44,11 +44,18 @@
 					<?php printf( esc_html__('Go to the home page of %1$s',
 					anh-popperscores), $site_title); ?>
 				</div>
-				<!-- displays the first letter of the site title  -->
-				<!-- aria-hidden is true to disables text to speech reader -->
-				<div class="site-firstletter" aria-hidden="true">
-					<?php echo substr($site_title, 0, 1); ?>
-				</div>
+				
+				<!-- set up conditional for site icon -->
+				<?php if (has_site_icon() ) {
+					$site_icon = esc_url( get_site_icon_url(270) ); ?>
+					<img class="site-icon" src="<?php echo $site_icon; ?>" alt="">
+				<?php } else { ?>
+					<!-- displays the first letter of the site title  -->
+					<!-- aria-hidden is true to disables text to speech reader -->
+					<div class="site-firstletter" aria-hidden="true">
+						<?php echo substr($site_title, 0, 1); ?>
+					</div>
+				<?php } ?>
 			</a>
 		</div>	
 
