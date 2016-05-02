@@ -410,6 +410,26 @@ To keep the mobile user experience in mind, we will move the menu to the bottom 
 
 The menu sticks on the page, and also has submenus.  The menu button disappears as we scrolls down and reappear as we scroll up.  
 
+#### How Menu Works in _s  
+The functions.php template has the register_nav_menus function with a generic menu called *primary*.  We can add a secondary menu in this array.  
+
+```php
+// This theme uses wp_nav_menu() in one location.
+    register_nav_menus( array(
+        'primary' => esc_html__( 'Primary', 'anh-popperscores' ),
+    ) );
+
+// Now add a secondary menu
+    register_nav_menus( array(
+        'primary' => esc_html__( 'Primary', 'anh-popperscores' ),
+        'secondary' => esc_html__( 'Secondary', 'anh-popperscores' ),
+    ) );
+
+```
+
+Now go to the customizer > Menu > Menu Locations.  Now we see two menus: primary and secondary.  The secondary menu can be selected, but won't do anything.  To get the menu to display need to place it into our theme.
+
+
 
 
 
