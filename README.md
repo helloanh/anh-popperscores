@@ -550,7 +550,18 @@ function initMainNavigation( container ) {
 
 ```
 
-## Chapter 6. The Single Post Template
+## Chapter 6. The Single Post Template  
+
+We are going to use three posts to test our content in this chapter.  
+
+### Changing the metasection to match the design draft  
+Looking at the template-parts/content.php file, we find the popperscores_posed_on() function.  
+We can use "grep -rnw /currentdir/ -e "search_pattern_name" to locate which file this function is located.  The search result shows us it is in inc/template-tags.php.  Make the adjustments to the style to match the mock-up.  
+
+   
+
+
+
 
 
 
