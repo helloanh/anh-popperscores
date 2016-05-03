@@ -34,6 +34,10 @@ function anh_popperscores_posted_on() {
 		'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
 	);
 
+	// Display the autor avatar if the author has a Gravatar
+	$author_id = get_the_author_meta('ID');
+	echo get_avatar($author_id);
+	
 	echo '<span class="byline">' . $byline . '</span><span class="posted-on">' . $posted_on . '</span>';
 	if ( ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
 		echo '<span class="comments-link">';

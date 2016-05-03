@@ -558,10 +558,12 @@ We are going to use three posts to test our content in this chapter.
 Looking at the template-parts/content.php file, we find the popperscores_posed_on() function.  
 We can use "grep -rnw /currentdir/ -e "search_pattern_name" to locate which file this function is located.  The search result shows us it is in inc/template-tags.php.  Make the adjustments to the style to match the mock-up.  
 
-   
+### Adding Gravatar 
+
+Using the [get_the_author_meta](https://developer.wordpress.org/reference/functions/get_the_author_meta/) and [get_avatar](https://developer.wordpress.org/reference/functions/get_avatar/) functions to add the gravatar to our post.  
 
 
-
+In the case of of users who has no gravatar, we can use the code from [validate gravatar](https://gist.github.com/justinph/5197810) to fix this issue.  
 
 
 
