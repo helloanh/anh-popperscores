@@ -427,10 +427,53 @@ The functions.php template has the register_nav_menus function with a generic me
 
 ```
 
-Now go to the customizer > Menu > Menu Locations.  Now we see two menus: primary and secondary.  The secondary menu can be selected, but won't do anything.  To get the menu to display need to place it into our theme.
+Now go to the customizer > Menu > Menu Locations.  Now we see two menus: primary and secondary.  The secondary menu can be selected, but won't do anything.  To get the menu to display need to place it into our theme.  
+
+Registering the 'secondary' menu was for demonstration purposes only.  We are going to select the *primary* menu and place it in the header.php template instead.  
+
+We will recycle the code from WP 2015 Theme in the sidebar.php temmplate and use it in our header.php for _s theme.  The WP 2015 menu has a toggle drop down we can use.  
+
+![dropdown]()
+
+Notice how the nav tag with the social-navigation id is similar to our own _s theme menu.  The important line we need to copy over in the wp_nav_menu array is **'menu_class'     => 'nav-menu'**.  
+
+```php
+twentyfifteen/sidebar.php
+
+if ( has_nav_menu( 'primary' ) || has_nav_menu( 'social' ) || is_active_sidebar( 'sidebar-1' )  ) : ?>
+    <div id="secondary" class="secondary">
+        <?php if ( has_nav_menu( 'primary' ) ) : ?>
+            <nav id="site-navigation" class="main-navigation" role="navigation">
+                <?php
+                    // Primary navigation menu.
+                    wp_nav_menu( array(
+                        'menu_class'     => 'nav-menu',
+                        'theme_location' => 'primary',
+                    ) );
+                ?>
+            </nav><!-- .main-navigation -->
+        <?php endif; ?>
+    ...
+
+```
+
+Then go to your underscore theme's header.php template and paste it in at the end of the wp_nav_menu call.  
+
+```php
+<!-- wp_nav_meny displays menu, before  -->
+<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu') ); ?>
+
+<!-- wp_nav_meny displays menu, after  -->
+<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu', 'menu_class' => 'nav-menu' ) ); ?>
+
+```  
+
+Copy paste the styles related to the menu section from twentyfifteen/style.css and paste it in ##Menu subsection under #Navigation in your own _s theme style.css.  Select all styles related to .main-navigation and .dropdown menu class.  
+
+ 
 
 
-
+ 
 
 
 
