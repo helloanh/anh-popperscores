@@ -1,5 +1,14 @@
 # WP  Underscore Development Notes  
 
+Table of Contents  
+
+Ch1. Installation 
+Ch2. Design to Development Process 
+Ch3. Setting Up the Basic Theme 
+Ch4. Setting Up the Header
+Ch5. Creating Menus
+Ch6. The Single Post Template
+
 Notes from WP Building Themes from Scratch Using Underscores by Rand-Hendriksen.  Courser from Lynda.com  
 
 ## Ch1. Installation and Step-by-Step Set-up:  
@@ -112,6 +121,8 @@ function anh_popperscores_scripts() {
 }
 
 ```
+
+##. Chapter 4 Setting Up the Header
 
 The wp_enqueue function automatically adds the url to the header. 
 
@@ -259,7 +270,7 @@ the font size will increase */
 ```
 
 
-## Chapter 4. Creating Menus  
+## Chapter 5. Creating Menus  
 
 ### Headers Styling 
 
@@ -433,8 +444,6 @@ Registering the 'secondary' menu was for demonstration purposes only.  We are go
 
 We will recycle the code from WP 2015 Theme in the sidebar.php temmplate and use it in our header.php for _s theme.  The WP 2015 menu has a toggle drop down we can use.  
 
-![dropdown]()
-
 Notice how the nav tag with the social-navigation id is similar to our own _s theme menu.  The important line we need to copy over in the wp_nav_menu array is **'menu_class'     => 'nav-menu'**.  
 
 ```php
@@ -494,7 +503,7 @@ wp_enqueue_script( 'anh-popperscores-navigation', get_template_directory_uri() .
 ``` 
 
 Lastly, we need to add the wp_localize_script function from the twentyfifteen theme into to our _s function.php file.  Make sure the handle from both wp_enqueue_script and wp_localize_script are the same.  Notice both are 'anh-popperscores-navigation' as the first params in the two functions.  Also change the screen reader text to say the correct theme.    
-a
+
 
 ```php
 
@@ -541,6 +550,7 @@ function initMainNavigation( container ) {
 
 ```
 
+## Chapter 6. The Single Post Template
 
 
 
