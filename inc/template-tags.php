@@ -38,18 +38,23 @@ function anh_popperscores_posted_on() {
 	$author_id = get_the_author_meta('ID');
 
 	if ( anh_poppperscores_validate_gravatar( $author_id) ) {
+		echo '<div class="meta-content has-avatar">';
 		echo '<div class="author-avatar">' . get_avatar($author_id) . '<div>';
 
+	} else {
+		echo '<div class="meta-content">';
 	}
 
-
 	echo '<span class="byline">' . $byline . '</span><span class="posted-on">' . $posted_on . '</span>';
+
 	if ( ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
 		echo '<span class="comments-link">';
 		/* translators: %s: post title */
 		comments_popup_link( sprintf( wp_kses( __( 'Leave a Comment<span class="screen-reader-text"> on %s</span>', 'anh-popperscores' ), array( 'span' => array( 'class' => array() ) ) ), get_the_title() ) );
 		echo '</span>';
 	}
+
+	echo '</div><!-- .meta-content -->';
 }
 endif;
 

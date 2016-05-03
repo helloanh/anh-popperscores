@@ -649,7 +649,7 @@ a:active {
 
 .no-js .main-navigation ul ul {
 	display: block;
-}
+}:;
 
 .dropdown-toggle {
 	background-color: transparent;
@@ -978,7 +978,49 @@ the font size will increase */
 	margin: 0 0 1.5em;
 }
 
+/* Post Meta */
+.entry-meta {
+	padding: 2em 0;
+	font-family: "Fira Sans", sans-serif;
+	font-size: 95%;
+	font-style: italic;
+	text-align: center;
+	background: #eee;
+}
+
+.author-avatar {
+	height: 50px;
+	width: 50px;
+	margin: 0 auto 1em;
+}
+
+.author-avatar img {
+	border-radius: 50%;
+}
+
+@media screen and (min-width: 50em) {
+
+	.author-avatar {
+		height: 70px;
+		width: 70px;
+		float: left;
+		margin-right: 1.5em;
+		margin-bottom: 0;
+	}
+	
+}
+
 .byline,
+.posted-on,
+.entry-meta .comments-link {
+	display: block;
+	padding:  0;
+}
+
+.entry-meta a {
+	font-weight: 700;
+}
+
 .updated:not(.published) {
 	display: none;
 }
