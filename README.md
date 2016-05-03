@@ -468,9 +468,81 @@ Then go to your underscore theme's header.php template and paste it in at the en
 
 ```  
 
-Copy paste the styles related to the menu section from twentyfifteen/style.css and paste it in ##Menu subsection under #Navigation in your own _s theme style.css.  Select all styles related to .main-navigation and .dropdown menu class.  
+Copy paste the styles related to the menu section from twentyfifteen/style.css and paste it in ##Menu subsection under #Navigation in your own _s theme style.css.  Select all styles related to .main-navigation and .dropdown menu class.  Make changes to the css to create the menu similar to the mockup.  
 
+We still need to add the javascript.  Look at in twentyfifteen/functions.php, we can see that these functions relate to the menu:  
+
+```php
+// twentyfifteen/functions.php
+wp_enqueue_script( 'twentyfifteen-script', get_template_directory_uri() . '/js/functions.js', array( 'jquery' ), '20150330', true );
+
+wp_localize_script( 'twentyfifteen-script', 'screenReaderText', array(
+    'expand'   => '<span class="screen-reader-text">' . __( 'expand child menu', 'twentyfifteen' ) . '</span>',
+    'collapse' => '<span class="screen-reader-text">' . __( 'collapse child menu', 'twentyfifteen' ) . '</span>',
+) );
+```
+
+We can trace the code back to the  **js/functions.js** file in the twentyfifteen directory.  The function we need to copy is the **initMainNavigation**.  Add this to the underscore theme js/navigation.js file.  Make sure to enable jQuery code.  
+
+Go to the functions.php and make sure jQuery is added to the array in functions.php as well.  
+
+```php
+// anh_popperscores/functions.php
+// add 'jquery' in the array()
+wp_enqueue_script( 'anh-popperscores-navigation', get_template_directory_uri() . '/js/navigation.js', array('jquery'), '20151215', true );
+
+``` 
+
+Lastly, we need to add the wp_localize_script function from the twentyfifteen theme into to our _s function.php file.  Make sure the handle from both wp_enqueue_script and wp_localize_script are the same.  Notice both are 'anh-popperscores-navigation' as the first params in the two functions.  Also change the screen reader text to say the correct theme.    
+a
+
+```php
+
+function anh_popperscores_scripts() {
+
+    ...
+
+    // BEFORE
+    wp_enqueue_script( 'anh-popperscores-navigation', get_template_directory_uri() . '/js/navigation.js', array('jquery'), '20151215', true );
+
+    wp_localize_script( 'twentyfifteen-script', 'screenReaderText', array(
+        'expand'   => '<span class="screen-reader-text">' . __( 'expand child menu', 'twentyfifteen' ) . '</span>',
+        'collapse' => '<span class="screen-reader-text">' . __( 'collapse child menu', 'twentyfifteen' ) . '</span>',
+    ) );
+
+    // AFTER
+    wp_enqueue_script( 'anh-popperscores-navigation', get_template_directory_uri() . '/js/navigation.js', array('jquery'), '20151215', true );
+
+    wp_localize_script( 'anh-popperscores-navigation, 'screenReaderText', array(
+        'expand'   => '<span class="screen-reader-text">' . __( 'expand child menu', 'anh-popperscores' ) . '</span>',
+        'collapse' => '<span class="screen-reader-text">' . __( 'collapse child menu', 'anh-popperscores' ) . '</span>',
+    ) );
  
+    ...
+}
+
+```
+
+If we look back at the site, we might think the code doesn't work.  However, the reason has to do with wordpress idiosyncrasy for loading pages.  Remember in our initMainNavigation, the container wants to find any menu item that hs the class  **menu-item-has-children**, but right now the menu item that has children all all *pages*.  The menu item right now is wrapped in a **page_item_has_children**.  We can fix this by simply adding the extra class in our initMainNavigation.  
+
+```php
+
+// js/navigation.js
+
+// BEFORE
+function initMainNavigation( container ) {
+        // Add dropdown toggle that display child menu items.
+        container.find( '.menu-item-has-children > a' ).after( '<button class="dropdown-toggle" aria-expanded="false">' + screenReaderText.expand + '</button>' );
+
+// AFTER
+function initMainNavigation( container ) {
+        // Add dropdown toggle that display child menu items.
+        container.find( '.menu-item-has-children > a, .page_item_has_children > a' ).after( '<button class="dropdown-toggle" aria-expanded="false">' + screenReaderText.expand + '</button>' );
+
+```
+
+
+
 
 
  
