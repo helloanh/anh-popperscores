@@ -19,6 +19,15 @@
 			}
 
 		if ( 'post' === get_post_type() ) : ?>
+
+
+		<?php 
+		if ( has_excerpt( $post -> ID) ) {
+			echo '<div class="deck">';
+			echo '<p>' . get_the_excerpt() . '</p>';
+			echo '</div><1!-- .deck -->';
+		}
+		
 		<div class="entry-meta">
 			<?php anh_popperscores_posted_on(); ?>
 		</div><!-- .entry-meta -->
