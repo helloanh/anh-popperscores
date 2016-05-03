@@ -563,7 +563,9 @@ We can use "grep -rnw /currentdir/ -e "search_pattern_name" to locate which file
 Using the [get_the_author_meta](https://developer.wordpress.org/reference/functions/get_the_author_meta/) and [get_avatar](https://developer.wordpress.org/reference/functions/get_avatar/) functions to add the gravatar to our post.  
 
 
-In the case of of users who has no gravatar, we can use the code from [validate gravatar](https://gist.github.com/justinph/5197810) to fix this issue.  
+In the case of of users who has no gravatar, we can use the code from [validate gravatar](https://gist.github.com/justinph/5197810) to fix this issue.  Make sure you add the code to the template-tags.php and add the conditional in the yourthemename_posted_on function in the sample template.  
+
+
 
 
 
