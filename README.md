@@ -556,7 +556,13 @@ We are going to use three posts to test our content in this chapter.
 
 ### Changing the metasection to match the design draft  
 Looking at the template-parts/content.php file, we find the popperscores_posed_on() function.  
-We can use "grep -rnw /currentdir/ -e "search_pattern_name" to locate which file this function is located.  The search result shows us it is in inc/template-tags.php.  Make the adjustments to the style to match the mock-up.  
+We can use "grep -rnw /currentdir/ -e "search_pattern_name" to locate which file this function is located.  The search result shows us it is in inc/template-tags.php.  Make the adjustments to the style to match the mock-up.    
+
+### Stretching the Meta Content in Post Page to Full-Width  
+
+** Formula **
+![formula1](http://i.imgur.com/14LYECB.png)
+![formula2](http://i.imgur.com/880fRDj.png)
 
 ### Adding Gravatar 
 
@@ -644,6 +650,16 @@ Use [the_post_navigation( array $args = array())](https://developer.wordpress.or
 Optional args are 'prev_text', 'next_text', 'screen_reader_text'.  
 
 Current post navigations is bare-bone, so modify the single.php template to change the view.  
+
+**Before**  
+
+![beforepostnav](http://i.imgur.com/kv6OSHd.png)
+
+**After**
+
+1[afterpostnav](http://i.imgur.com/PqNEOCw.png)
+
+
 
 
 
