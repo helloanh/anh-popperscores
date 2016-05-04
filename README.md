@@ -670,6 +670,32 @@ Relevant files location from _s theme as parent directory:
 
 The [wp_list_comments](https://developer.wordpress.org/reference/functions/wp_list_comments/) function has many optional parameters to change the individual output of comments.  For example, one of those params is **avatar_size**, which has a default size of 32px.  This is too small for our site, so we change the default size to whatever we want.  
 
+## Ch8. Working w/ Featured Images  
+
+        + aka "Post Thumbnails"  
+        + typically displayed above post titles in index pages  
+        + the images social media uses when your content is shared  
+
+#### How They Work 
+
+When you only want to display just the image from the post, or display the image separate from the content in a different place, then you want to use the *featured image* instead.   
+
+![contentvsfeaturedimg](http://i.imgur.com/qRpk89s.png)
+
+The featured image lives separately from the post content in the database.  That means you can use the post id to call the featured image separately.  
+
+Use the [the_post_thumbnail()](https://developer.wordpress.org/reference/functions/the_post_thumbnail/) function to do that.  
+
+You can define multiple sizes of the same image to be displayed at different location in the theme.  
+
+As an example, you can display the same image different in the index vs. the single page:     
+
+![diffsizes](http://i.imgur.com/jCnfLK4.png)  
+
+The reason featured images function is named the_post_thumbnail() is for backward compatibility option, since long ago, these images were as thumbnails next to excerpts in the index page originally.  
+
+
+
 
 
 
