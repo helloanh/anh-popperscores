@@ -1,17 +1,17 @@
-# WP  Underscore Development Notes  
+# WP  Underscore Development Notes 
+
+Notes from WP Building Themes from Scratch Using Underscores by Rand-Hendriksen.  Courser from Lynda.com  
 
 ### Table of Contents  
 
-#### Ch1. Installation**  
+#### Ch1. Installation 
 #### Ch2. Design to Development Process 
 #### Ch3. Setting Up the Basic Theme
 #### Ch4. Setting Up the Header
 #### Ch5. Creating Menus
 #### Ch6. The Single Post Template
 #### Ch7. Working with Comments
-
-
-Notes from WP Building Themes from Scratch Using Underscores by Rand-Hendriksen.  Courser from Lynda.com  
+ 
 
 ## Ch1. Installation and Step-by-Step Set-up:  
 
