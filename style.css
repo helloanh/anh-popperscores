@@ -153,7 +153,7 @@ svg:not(:root) {
 }
 
 figure {
-	margin: 1em 40px;
+	margin: 0;
 }
 
 hr {
@@ -1220,7 +1220,7 @@ object {
 	top: -3px;
 	left: -1.4em;
 	display: block;
-	font-family: "icons";
+	font-family: "FontAwesome";
 	font-style: normal;
 	color: #808080;
 	content: "\f148";
