@@ -146,7 +146,7 @@ add_action( 'save_post',     'anh_popperscores_category_transient_flusher' );
  * @return bool if the gravatar exists or not
  */
 
-function anh_poppperscores_validate_gravatar($id_or_email) {
+function anh_popperscores_validate_gravatar($id_or_email) {
   //id or email code borrowed from wp-includes/pluggable.php
 	$email = '';
 	if ( is_numeric($id_or_email) ) {
