@@ -565,7 +565,25 @@ Using the [get_the_author_meta](https://developer.wordpress.org/reference/functi
 
 In the case of of users who has no gravatar, we can use the code from [validate gravatar](https://gist.github.com/justinph/5197810) to fix this issue.  Make sure you add the code to the template-tags.php and add the conditional in the yourthemename_posted_on function in the sample template.   
 
-### Adding Except 
+#### Blockquote  
+
+Blockquotes can be styled using basic css and icons such as the set from [fontawesome](http://fontawesome.io).  Go to your browser and use the developer tool to see the blockquote from a mobile-device screen and add a new rule for blockquotes.  
+
+```css
+/* pseudo element to load before the blockquote text
+this allows us to use the before quotes icon with \f10d as the unicode */
+
+blockquote::before {
+    font-family: 'FontAwesome';
+    content: "\f10d";
+}
+blockquote {
+    font-size: 1.5em;
+    line-height: 1.4em;
+    margin: 1.5em 0 1.5em 2em;
+}
+
+```
 
 
 
