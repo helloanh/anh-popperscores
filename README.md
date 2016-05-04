@@ -663,6 +663,20 @@ Current post navigations is bare-bone, so modify the single.php template to chan
 
 ## Chapter 7. Working with Comments  
 
+Relevant files location from _s theme as parent directory:  
+        single.php    
+        comments.php   
+
+
+The [wp_list_comments](https://goo.gl/ERb6Nx) function has many optional parameters to change the individual output of comments.  For example, one of those params is **avatar_size**, which has a default size of 32px.  This is too small for our site, so we change the default size to whatever we want.  
+
+
+
+
+
+
+
+
 
 
 
@@ -671,6 +685,7 @@ Current post navigations is bare-bone, so modify the single.php template to chan
 
 
  
+
 
 
 
