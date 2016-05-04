@@ -584,6 +584,16 @@ blockquote {
 }
 
 ```
+#### Center Aligned Images and Display as Full-Width Items  
+
+Remember before when we position the meta content to full-width of the page, we have to increase its size using css and use negative margins to position it.  
+There was some convoluted math since the font size of the meta section is smaller than the regular font size.  
+
+But for images, the font-size is the same, so the math is much easier.  When users upload different sizes images, it makes it harder to predict the specific media queries to adjust images to full-width.  
+
+To solve this issue, we will instead wrap the image inside a new element, the <figure> element.  Then we can increase the size of the figure element, while the image has already filled in the available space.  Now we can use the same technique to align images properly.  
+
+
 
 
 
