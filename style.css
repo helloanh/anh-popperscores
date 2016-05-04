@@ -1,4 +1,4 @@
-/*
+:/*
 Theme Name: Anh Popperscores
 Theme URI: http://underscores.me/
 Author: Anh Kim Hoang
@@ -42,6 +42,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 # Infinite scroll
 # Media
 	## Captions
+	## Images
 	## Galleries
 --------------------------------------------------------------*/
 
@@ -546,17 +547,17 @@ textarea {
 ## Links
 --------------------------------------------------------------*/
 a {
-	color: royalblue;
+	color: #000;    
 }
 
 a:visited {
-	color: purple;
+	color:#000;
 }
 
 a:hover,
 a:focus,
 a:active {
-	color: midnightblue;
+	color: #000;
 }
 
 a:focus {
@@ -970,6 +971,34 @@ the font size will increase */
 /*--------------------------------------------------------------
 ## Posts and pages
 --------------------------------------------------------------*/
+.entry-content a,
+.entry-content a,
+.entry-summary a,
+.entry-summary a {
+    text-decoration: none;
+        border-bottom: 2px solid #c3c3c3;
+}
+
+.entry-content a:hover,
+.entry-content a:focus,
+.entry-summary a:hover,
+.entry-summary a:focus {
+    border-bottom: 3px solid #c3c3c3;
+        box-shadow: inset 0 -3px 0 #c3c3c3;
+}
+
+.entry-meta a,
+.entry-footer a {
+    text-decoration: none;
+    }
+
+    .entry-meta a:hover,
+    .entry-meta a:focus,
+    .entry-footer a:hover,
+    .entry-footer a:focus {
+        border-bottom: 2px solid #000;
+}
+
 .sticky {
 	display: block;
 }
@@ -1150,6 +1179,21 @@ object {
 
 .wp-caption-text {
 	text-align: center;
+}
+
+
+/*--------------------------------------------------------------
+## Images
+--------------------------------------------------------------*/
+
+img.aligncenter {
+	margin-top: 2em;
+	margin-bottom: 2em;
+}
+
+img.alignright,
+img.alignleft {
+	margin-bottom: 1.5em;
 }
 
 /*--------------------------------------------------------------
