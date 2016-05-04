@@ -123,7 +123,7 @@ function anh_popperscores_scripts() {
 	// Add Google Fonts that is self-hosted locally
 	wp_enqueue_style('anh-popperscores-local-fonts', get_template_directory_uri() . '/fonts/custom-fonts.css');
 
-	wp_enqueue_script( 'anh-popperscores-navigation', get_template_directory_uri() . '/js/navigation.js', array('jquery'), '20151215', true );
+	wp_enqueue_script( 'anh-popperscores-navigation', get_template_directory_uri() . '/js/functions.js', array('jquery'), '20151215', true );
 
 	wp_localize_script( 'twentyfifteen-script', 'screenReaderText', array(
 		'expand'   => '<span class="screen-reader-text">' . __( 'expand child menu', 'twentyfifteen' ) . '</span>',

@@ -593,6 +593,50 @@ But for images, the font-size is the same, so the math is much easier.  When use
 
 To solve this issue, we will instead wrap the image inside a new element, the <figure> element.  Then we can increase the size of the figure element, while the image has already filled in the available space.  Now we can use the same technique to align images properly.  
 
+Go to js/navigation.js  and add some js to wrap the html with the figure element.   
+
+```js
+js/navigation.js 
+( function( $ ) {
+    
+    ...
+
+    // wrap centered images in a a new figure element 
+    $( 'img.aligncenter').wrap('<figure class="centered-image"></figure>');
+
+)(jQuery);
+
+```
+
+```css
+style.css
+## Images 
+
+.centered-image {
+/*  Notice that the image is inside the div with .entry-content class
+    and this div is constrain by our .site-main. The .site-main div is 
+    the parent div of .entry-content.  We see the margin for the left and 
+    right side of .site-content class as 1.4em.  So 1.4+1.4 = 2.8em. 
+    That's how we can find the value to increase the image to the 
+    full-width of the page.
+*/
+    max-width: calc(100% + 2.8em);
+    margin: 1.5em -1.4em;
+}
+
+/*small screen*/
+@media screen and (min-width: 30em) {
+    .centered-image {
+        max-width: calc(100% + 3.6em);
+        margin: 1.5em -1.8em;
+    }
+}
+
+```
+
+Also **change the js/navigation.js --> js/functions.js  and update the pathname in wp_enqueue_scripts in functions.php.  
+
+
 
 
 

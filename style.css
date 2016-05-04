@@ -1201,7 +1201,6 @@ object {
 ## Images
 --------------------------------------------------------------*/
 
-
 img.aligncenter {
 	margin-top: 2em;
 	margin-bottom: 2em;
@@ -1212,6 +1211,25 @@ img.alignleft {
 	margin-bottom: 1.5em;
 }
 
+.centered-image {
+/*	Notice that the image is inside the div with .entry-content class
+	and this div is constrain by our .site-main. The .site-main div is 
+	the parent div of .entry-content.  We see the margin for the left and 
+	right side of .site-content class as 1.4em.  So 1.4+1.4 = 2.8em. 
+	That's how we can find the value to increase the image to the 
+	full-width of the page.
+*/
+	max-width: calc(100% + 2.8em);
+	margin: 1.5em -1.4em;
+}
+
+/*small screen*/
+@media screen and (min-width: 30em) {
+	.centered-image {
+		max-width: calc(100% + 3.6em);
+		margin: 1.5em -1.8em;
+	}
+}
 /*medium-sized screen*/
 @media screen and (min-width: 50em) {
 	img.alignright {
