@@ -1201,6 +1201,7 @@ object {
 ## Images
 --------------------------------------------------------------*/
 
+
 img.aligncenter {
 	margin-top: 2em;
 	margin-bottom: 2em;
@@ -1209,6 +1210,17 @@ img.aligncenter {
 img.alignright,
 img.alignleft {
 	margin-bottom: 1.5em;
+}
+
+/*medium-sized screen*/
+@media screen and (min-width: 50em) {
+	img.alignright {
+		/* pulling image slightly left, making it jump out to the left of the article */
+		margin-right: -1.5em;
+	}
+	img.alignleft {
+		margin-left: -1.5em;
+	}
 }
 
 /*--------------------------------------------------------------
