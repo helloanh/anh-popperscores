@@ -668,7 +668,7 @@ Relevant files location from _s theme as parent directory:
         comments.php   
 
 
-The [wp_list_comments](https://goo.gl/ERb6Nx) function has many optional parameters to change the individual output of comments.  For example, one of those params is **avatar_size**, which has a default size of 32px.  This is too small for our site, so we change the default size to whatever we want.  
+The [wp_list_comments](https://developer.wordpress.org/reference/functions/wp_list_comments/) function has many optional parameters to change the individual output of comments.  For example, one of those params is **avatar_size**, which has a default size of 32px.  This is too small for our site, so we change the default size to whatever we want.  
 
 
 
