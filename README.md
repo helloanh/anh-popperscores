@@ -637,9 +637,13 @@ style.css
 Also **change the js/navigation.js --> js/functions.js  and update the pathname in wp_enqueue_scripts in functions.php.  
 
 
+#### Post Navigations  
 
+Use [the_post_navigation( array $args = array())](https://developer.wordpress.org/reference/functions/the_post_navigation/) to modify the navigation fo next/previous post.  
 
+Optional args are 'prev_text', 'next_text', 'screen_reader_text'.  
 
+Current post navigations is bare-bone, so modify the single.php template to change the view.  
 
 
 
