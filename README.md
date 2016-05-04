@@ -559,8 +559,8 @@ Looking at the template-parts/content.php file, we find the popperscores_posed_o
 We can use "grep -rnw /currentdir/ -e "search_pattern_name" to locate which file this function is located.  The search result shows us it is in inc/template-tags.php.  Make the adjustments to the style to match the mock-up.    
 
 ### Stretching the Meta Content in Post Page to Full-Width  
+This is the formula to use to stretch an inner content full width of the page.  The tricky part is to take different font-sizes into consideration.  
 
-** Formula **
 ![formula1](http://i.imgur.com/14LYECB.png)
 ![formula2](http://i.imgur.com/880fRDj.png)
 
@@ -657,7 +657,11 @@ Current post navigations is bare-bone, so modify the single.php template to chan
 
 **After**
 
-1[afterpostnav](http://i.imgur.com/PqNEOCw.png)
+![afterpostnav](http://i.imgur.com/PqNEOCw.png) 
+
+## Chapter 7. Working with Comments  
+
+
 
 
 
