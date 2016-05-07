@@ -192,3 +192,14 @@ function anh_popperscores_validate_gravatar($id_or_email) {
 		return false;
 	}
 }
+
+/** 
+Customize the except read-more indicator
+**/
+
+function anh_popperscores_excerpt_more ($more) {
+	return " ...";
+}
+
+add_filter( 'excerpt more', 'anh_popperscores_excerpt_more');
+
