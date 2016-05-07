@@ -692,7 +692,17 @@ As an example, you can display the same image different in the index vs. the sin
 
 ![diffsizes](http://i.imgur.com/jCnfLK4.png)  
 
-The reason featured images function is named the_post_thumbnail() is for backward compatibility option, since long ago, these images were as thumbnails next to excerpts in the index page originally.  
+The reason featured images function is named the_post_thumbnail() is for backward compatibility option, since long ago, these images were as thumbnails next to excerpts in the index page originally.    
+
+#### Adding Image Sizes  
+
+*08_02 Working with Featured imgs* video  
+
+Add  set_post_thumbnail funtion in functions.php after add_theme_support('post-thumbnails') line.  
+
+You now need to regenerate all featured images that has already been added.   
+
+
 
 
 
