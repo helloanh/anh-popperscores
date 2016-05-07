@@ -698,10 +698,25 @@ The reason featured images function is named the_post_thumbnail() is for backwar
 
 *08_02 Working with Featured imgs* video  
 
+### Backend set up  
+
 Add  set_post_thumbnail funtion in functions.php after add_theme_support('post-thumbnails') line.  
 
-You now need to regenerate all featured images that has already been added.   
+You now need to regenerate all featured images that has already been added.  Use a the **Regenerate Thumbnails** plugin.  The function is under **Tools** section in your dashboard.  
 
+
+### Set up in the front end  
+
+Use *the_post_thumbnail* or *get_the_post_thumbnail*.  
+
+```php
+anh-popperscores/template-parts/content.php  
+
+<!-- dont have to echo out with the_post_thumbnail -->
+<?php the_post_thumbnail(); ?>
+<!-- you need to set as a var and echo oget_the_post_thumbnail -->
+<?php $featured_image = get_the_post_thumbnail(); ?>
+```
 
 
 
