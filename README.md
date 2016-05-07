@@ -717,7 +717,19 @@ anh-popperscores/template-parts/content.php
 <!-- you need to set as a var and echo oget_the_post_thumbnail -->
 <?php $featured_image = get_the_post_thumbnail(); ?>
 
+<!-- you have the option of using different sizes of featured img,
+this is good for customizing diff sizes for diff template, such as 
+displaying smaller featured img on the index pages  --> 
+<?php the_post_thumbnail('anh-popperscores-small-thumb') ;?>
+
+<!-- or the default thumbnail with use 'thumbnail', which can be adjusted
+in the Settings >> Media Settings >> Thumbnail size option in the Dashboard -->
+<?php the_post_thumbnail('thumbnail'); ?>
+
+
+
 ```
+
 
 
 

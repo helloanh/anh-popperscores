@@ -15,7 +15,11 @@
 		if (has_post_thumbnail() ) { ?>
 			<figure>
 			<!-- dont have to echo out with the_post_thumbnail -->
-			<?php the_post_thumbnail(); ?>
+	<!-- 		<?php the_post_thumbnail(); ?>
+			you have the option of using different sizes of featured img,
+			this is good for customizing diff sizes for diff template, such as 
+			displaying smaller featured img on the index pages  -->
+			<?php the_post_thumbnail('anh-popperscores-small-thumb'); ;?>
 			</figure>
 		<?php } ?>
 

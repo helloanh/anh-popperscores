@@ -1582,7 +1582,8 @@ img.alignleft {
 	margin-bottom: 1.5em;
 }
 
-.centered-image {
+.centered-image, 
+.featured-image {
 /*	Notice that the image is inside the div with .entry-content class
 	and this div is constrain by our .site-main. The .site-main div is 
 	the parent div of .entry-content.  We see the margin for the left and 
@@ -1597,6 +1598,7 @@ img.alignleft {
 /*small screen*/
 @media screen and (min-width: 30em) {
 	.centered-image,
+	.featured-image,
 	.wp-caption.alignright  {
 		max-width: calc(100% + 3.6em);
 		margin: 1.5em -1.8em;
@@ -1632,11 +1634,13 @@ img.alignleft {
 	}
 }
 
-/*make sure img in featured image is aligned*/
+/* make sure img in featured image is aligned */
 .featured-image img {
 	display: block;
 	margin: 0 auto;
 }
+
+
 /*--------------------------------------------------------------
 ## Galleries
 --------------------------------------------------------------*/
