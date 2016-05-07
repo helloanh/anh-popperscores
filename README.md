@@ -726,9 +726,26 @@ displaying smaller featured img on the index pages  -->
 in the Settings >> Media Settings >> Thumbnail size option in the Dashboard -->
 <?php the_post_thumbnail('thumbnail'); ?>
 
-
-
 ```
+
+## Chapter 9 Working with Index Templates  
+
+There are three index templates in _s:  
+        + archives.php  
+        + index.php   
+        + search.php  
+
+Make sure all main components look good and follow the design guidelines.  
+
+### The Archive Pages  
+
+we have a new element:  the page title.  The page title appeares on archive page, 404 page, and search result page.  
+
+We need to create a couple new rules in the styles.css under the subsection Global under the Content section.  
+
+
+
+
 
 
 
