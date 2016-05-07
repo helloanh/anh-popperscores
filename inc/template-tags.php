@@ -201,5 +201,5 @@ function anh_popperscores_excerpt_more ($more) {
 	return " ...";
 }
 
-add_filter( 'excerpt more', 'anh_popperscores_excerpt_more');
+add_filter( 'excerpt_more', 'anh_popperscores_excerpt_more');
 
