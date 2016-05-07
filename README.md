@@ -716,6 +716,7 @@ anh-popperscores/template-parts/content.php
 <?php the_post_thumbnail(); ?>
 <!-- you need to set as a var and echo oget_the_post_thumbnail -->
 <?php $featured_image = get_the_post_thumbnail(); ?>
+
 ```
 
 
