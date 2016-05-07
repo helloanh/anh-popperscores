@@ -37,6 +37,8 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 # Header
 # Widgets
 # Content
+	## Global
+	## Indexes
 	## Posts and pages
 	## Asides
 	## Comments
@@ -1081,6 +1083,10 @@ the font size will increase */
 }
 
 
+/*--------------------------------------------------------------
+## Indexes
+--------------------------------------------------------------*/
+
 .page-title {
 	text-align: center;
 	font-size: italic;
@@ -1094,6 +1100,37 @@ the font size will increase */
 	border-bottom: 1px solid #c3c3c3;
 	margin: 2em auto;
 }
+.entry-header .index-entry-meta {
+	font-size: .8em;
+}
+
+.entry-content.index-excerpt {
+	margin-top: .3em;
+}
+
+@media screen and (min-width: 30em) {
+	.entry-title.index-excerpt {
+		margin-top: 1.5em;
+		font-size: 2em;
+	}
+
+	.index-entry-meta {
+		font-size: 1em;
+	}
+
+	.index-entry-meta .byline,
+	.index-entry-meta .posted-on,
+	.index-entry-meta .comments-link {
+		display: inline-block;
+	}
+
+	.index-entry-meta .byline::after,
+	.index-entry-meta .comments-link::before {
+		content: "|";
+		padding: 0 1em;
+	}
+}
+
 /*--------------------------------------------------------------
 ## Posts and pages
 --------------------------------------------------------------*/

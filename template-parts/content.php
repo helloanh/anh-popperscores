@@ -11,22 +11,13 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="entry-header">
-		<?php 
-		if (has_post_thumbnail() ) { ?>
-			<figure class="featured-image">
-			<!-- dont have to echo out with the_post_thumbnail -->
-			<?php the_post_thumbnail(); ?> 
-			</figure>
-		<?php } ?>
-
-		<?php
-			if ( is_single() ) {
-				the_title( '<h1 class="entry-title">', '</h1>' );
-			} else {
-				the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
-			}
-
-		if ( 'post' === get_post_type() ) : ?>
+		<?php the_title( sprintf( '<h2 class="entry-title index-excerpt"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>
+		
+		<?php if ( 'post' === get_post_type() ) : ?>
+			<div class="index-entry-meta">
+				<?php anh_popperscores_index_posted_on(); ?>
+			</div><!-- .entry-meta -->
+		<?php endif; ?>
 
 
 		<?php 
